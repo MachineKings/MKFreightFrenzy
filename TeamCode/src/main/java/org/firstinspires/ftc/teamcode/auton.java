@@ -17,15 +17,32 @@ public class auton extends LinearOpMode {
         frontLeft = hardwareMap.dcMotor.get("frontLeft");
         backLeft = hardwareMap.dcMotor.get("backLeft");
 
-        waitForStart();
-
-
-
-    }
-    public void forwards (){
+        //Forward
+        frontRight.setPower(1);
         frontLeft.setPower(1);
         backLeft.setPower(1);
+        backRight.setPower(1);
+
+        //Backwards
+        frontLeft.setPower(-1);
         frontRight.setPower(-1);
         backRight.setPower(-1);
+        backLeft.setPower(-1);
+
+        //turn right
+        frontRight.setPower(0);
+        backLeft.setPower(1);
+        frontLeft.setPower(0);
+        backRight.setPower(0);
+
+        //turn left
+        frontLeft.setPower(0);
+        frontRight.setPower(1);
+        backRight.setPower(1);
+        backLeft.setPower(0);
+
+
     }
-}
+
+    }
+
